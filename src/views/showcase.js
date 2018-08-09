@@ -6,8 +6,8 @@ import Button from '../components/button';
 import IconButton from '../components/iconButton';
 
 const Showcase = () =>
-  <div>
-    <div style={{ padding: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+  <div className="container">
+    <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <Button>Button</Button>
       <Button disabled>Button</Button>
       <Button primary>Button</Button>
@@ -15,7 +15,7 @@ const Showcase = () =>
       <Button secondary>Button</Button>
       <Button secondary disabled>Button</Button>
     </div>
-    <div style={{ padding: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <Icon name="logo" />
       <Icon name="plus" />
       <Icon name="ticks" />
@@ -24,7 +24,7 @@ const Showcase = () =>
       <Icon name="unchecked" />
       <Icon name="open-in-new" />
     </div>
-    <div style={{ padding: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <Input placeholder="Input" />
       <IconButton name="plus" color="#49c" />
       <IconButton name="checked" color="#49c" />

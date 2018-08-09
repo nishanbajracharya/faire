@@ -1,6 +1,7 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 
-const Home = () => <div>Hove</div>;
+const Home = () => <div className="container">
+  Home
+</div>;
 
 export default Home;

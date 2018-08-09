@@ -3,10 +3,12 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Home from './views/home';
+import AppBar from './views/appBar';
 import Showcase from './views/showcase';
 
 const Routes = () => <Router>
   <div>
+    <AppBar />
     <Route exact path="/" component={Home} />
     <Route path="/showcase" component={Showcase} />
   </div>

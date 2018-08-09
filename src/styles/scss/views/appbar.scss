@@ -1,0 +1,30 @@
+.appbar {
+  background: #fff;
+  @include shadow();
+
+  .container {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .link {
+    width: 170px;
+    height: 64px;
+    color: #929292;
+    align-items: center;
+    display: inline-flex;
+    box-sizing: border-box;
+    justify-content: center;
+
+    &.active {
+      border-top: 2px solid $global-primary-background;
+    }
+
+    &:hover {
+      text-decoration: none;
+      background: rgba(0, 0, 0, 0.04);
+    }
+  }
+}
