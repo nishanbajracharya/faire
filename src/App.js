@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Icon from './components/icon';
 import Input from './components/input';
 import Button from './components/button';
+import IconButton from './components/iconButton';
 
 class App extends Component {
   render() {
@@ -27,6 +28,10 @@ class App extends Component {
         </div>
         <div style={{ padding: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Input placeholder="Input" />
+          <IconButton name="plus" color="#49c" />
+          <IconButton name="checked" color="#49c" />
+          <IconButton name="unchecked" color="#49c" />
+          <IconButton name="open-in-new" color="#49c" />
         </div>
       </div>
     );

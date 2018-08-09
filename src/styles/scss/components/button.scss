@@ -72,3 +72,10 @@
     border: $button-border-width solid lighten($button-secondary-background, 5%);
   }
 }
+
+.icon-button {
+  cursor: pointer;
+  &.uk-button {
+    padding: 0;
+  }
+}
