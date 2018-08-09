@@ -8,13 +8,21 @@ class App extends Component {
     return (
       <div>
         <div style={{ padding: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Icon name="logo" />
           <Button>Button</Button>
           <Button disabled>Button</Button>
           <Button primary>Button</Button>
           <Button primary disabled>Button</Button>
           <Button secondary>Button</Button>
           <Button secondary disabled>Button</Button>
+        </div>
+        <div style={{ padding: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Icon name="logo" />
+          <Icon name="plus" />
+          <Icon name="ticks" />
+          <Icon name="search" />
+          <Icon name="checked" />
+          <Icon name="unchecked" />
+          <Icon name="open-in-new" />
         </div>
       </div>
     );
