@@ -1,0 +1,13 @@
+@mixin hook-form-single-line() {
+  border: none;
+  height: 60px;
+  font-size: 16px;
+  line-height: 60px;
+  border-bottom: 1px solid $input-border-bottom;
+}
+
+@mixin hook-form-focus() {
+  color: #49c;
+  border: none;
+  border-bottom: 1px solid $input-border-bottom-focus;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Icon from './components/icon';
+import Input from './components/input';
 import Button from './components/button';
 
 class App extends Component {
@@ -23,6 +24,9 @@ class App extends Component {
           <Icon name="checked" />
           <Icon name="unchecked" />
           <Icon name="open-in-new" />
+        </div>
+        <div style={{ padding: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Input placeholder="Input" />
         </div>
       </div>
     );
