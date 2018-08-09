@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ICONS from '../../constants/icons';
+import COLORS from '../../constants/colors';
 
 import Logo from './logo';
 
@@ -10,7 +11,7 @@ const Icon = ({
 }) => {
   switch(name) {
     case ICONS.LOGO:
-      return <Logo {...props} />;
+      return <Logo color={COLORS.PRIMARY} {...props} />;
     default:
       return <div />;
   }

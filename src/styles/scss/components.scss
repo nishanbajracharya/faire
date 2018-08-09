@@ -5,6 +5,7 @@
 }
 
 @mixin hook-button-default() {
+  box-shadow: 0 1px 2px fade-out(darken($button-default-background, 20%), .4);
   border: $button-border-width solid darken($button-default-background, 20%);
   background-image: linear-gradient($button-default-background, darken($button-default-background, 5%));
 }
@@ -16,6 +17,7 @@
 
 @mixin hook-button-primary() {
   border: $button-border-width solid $button-primary-background;
+  box-shadow: 0 1px 2px fade-out($button-primary-background, .4);
   background-image: linear-gradient($button-primary-background, darken($button-primary-background, 5%));
 }
 
@@ -31,6 +33,7 @@
 
 @mixin hook-button-secondary() {
   border: $button-border-width solid $button-secondary-background;
+  box-shadow: 0 1px 2px fade-out($button-secondary-background, .4);
   background-image: linear-gradient($button-secondary-background, darken($button-secondary-background, 5%));
 }
 
@@ -42,4 +45,25 @@
 @mixin hook-button-secondary-active() {
   border: $button-border-width solid $button-secondary-background;
   background-image: linear-gradient(darken($button-secondary-background, 10%), darken($button-secondary-background, 5%));
+}
+
+@mixin hook-button-disabled() {
+  cursor: not-allowed;
+  &.uk-button-default {
+    color: fade-out(darken($button-default-background, 40%), 0.6);
+    background: darken($button-default-background, 5%);
+    border: $button-border-width solid darken($button-default-background, 10%);
+  }
+
+  &.uk-button-primary {
+    color: fade-out($button-primary-color, 0.6);
+    background: lighten($button-primary-background, 5%);
+    border: $button-border-width solid lighten($button-primary-background, 5%);
+  }
+
+  &.uk-button-secondary {
+    color: fade-out($button-secondary-color, 0.6);
+    background: lighten($button-secondary-background, 5%);
+    border: $button-border-width solid lighten($button-secondary-background, 5%);
+  }
 }
