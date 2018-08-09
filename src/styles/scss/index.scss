@@ -1,7 +1,11 @@
+// App theme
+@import 'theme';
+
 // UIKit
 @import "uikit/src/scss/variables-theme.scss";
 @import "uikit/src/scss/mixins-theme.scss";
-@import "uikit/src/scss/uikit-theme.scss";
 
-// App theme
-@import 'theme';
+// Components
+@import 'components';
+
+@import "uikit/src/scss/uikit-theme.scss";

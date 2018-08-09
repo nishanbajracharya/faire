@@ -1,0 +1,45 @@
+// Buttons
+@mixin hook-button() {
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+@mixin hook-button-default() {
+  border: $button-border-width solid darken($button-default-background, 20%);
+  background-image: linear-gradient($button-default-background, darken($button-default-background, 5%));
+}
+
+@mixin hook-button-default-hover() {
+  border: $button-border-width solid darken($button-default-background, 20%);
+  background-image: linear-gradient(darken($button-default-background, 5%), darken($button-default-background, 10%));
+}
+
+@mixin hook-button-primary() {
+  border: $button-border-width solid $button-primary-background;
+  background-image: linear-gradient($button-primary-background, darken($button-primary-background, 5%));
+}
+
+@mixin hook-button-primary-hover() {
+  border: $button-border-width solid $button-primary-background;
+  background-image: linear-gradient(lighten($button-primary-background, 5%), $button-primary-background);
+}
+
+@mixin hook-button-primary-active() {
+  border: $button-border-width solid $button-primary-background;
+  background-image: linear-gradient(darken($button-primary-background, 10%), darken($button-primary-background, 5%));
+}
+
+@mixin hook-button-secondary() {
+  border: $button-border-width solid $button-secondary-background;
+  background-image: linear-gradient($button-secondary-background, darken($button-secondary-background, 5%));
+}
+
+@mixin hook-button-secondary-hover() {
+  border: $button-border-width solid $button-secondary-background;
+  background-image: linear-gradient(lighten($button-secondary-background, 5%), $button-secondary-background);
+}
+
+@mixin hook-button-secondary-active() {
+  border: $button-border-width solid $button-secondary-background;
+  background-image: linear-gradient(darken($button-secondary-background, 10%), darken($button-secondary-background, 5%));
+}
