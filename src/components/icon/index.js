@@ -19,17 +19,17 @@ const Icon = ({
     case ICONS.LOGO:
       return <Logo color={COLORS.PRIMARY} {...props} />;
       case ICONS.PLUS:
-      return <Plus {...props} />;
+      return <Plus size={25} {...props} />;
     case ICONS.SEARCH:
-      return <Search {...props} />;
+      return <Search size={25} {...props} />;
       case ICONS.TICKS:
-      return <Ticks {...props} />;
+      return <Ticks size={25} {...props} />;
       case ICONS.CHECKED:
-      return <Checked {...props} />;
+      return <Checked size={25} {...props} />;
       case ICONS.UNCHECKED:
-      return <Unchecked {...props} />;
+      return <Unchecked size={25} {...props} />;
     case ICONS.OPEN_IN_NEW:
-      return <OpenInNew {...props} />;
+      return <OpenInNew size={25} {...props} />;
     default:
       return <div />;
   }

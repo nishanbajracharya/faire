@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import TodoItem from './todoItem';
 
 const TodoList = ({
-  list = []
+  list = [],
+  onClick = f => f
 }) => <ul className="todolist">
   {
-    list.map((item, key) => <TodoItem key={key} {...item} />)
+    list.map((item, key) => <TodoItem key={key} {...item} onClick={() => onClick(item)}/>)
   }
 </ul>;
 
