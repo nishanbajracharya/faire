@@ -1,4 +1,7 @@
 .appbar {
+  top: 0;
+  width: 100%;
+  position: fixed;
   background: #fff;
   @include shadow();
 
@@ -9,7 +12,7 @@
     align-items: center;
     justify-content: space-between;
 
-    @media (min-width: 64em) {
+    @media (min-width: 65em) {
       padding: 0;
     }
   }
@@ -17,7 +20,7 @@
   .link {
     width: 170px;
     height: 64px;
-    color: #929292;
+    color: $nav-link;
     align-items: center;
     display: inline-flex;
     box-sizing: border-box;
@@ -36,7 +39,7 @@
 
   .nav-container {
     display: none;
-    @media (min-width: 30em) {
+    @media (min-width: 64em) {
       display: flex;
       margin-left: -55px;
     }

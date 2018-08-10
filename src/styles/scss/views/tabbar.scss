@@ -1,0 +1,33 @@
+.tab-bar {
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  @include reverse-shadow();
+
+  .link {
+    flex: 1;
+    height: 64px;
+    display: flex;
+    color: $nav-link;
+    background: $white;
+    align-items: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    justify-content: center;
+    border-bottom: 2px solid transparent;
+
+    &.active {
+      border-bottom: 2px solid $blue;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @media (min-width: 64em) {
+    display: none;
+    margin-left: -55px;
+  }
+}

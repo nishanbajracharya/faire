@@ -1,14 +1,16 @@
-body {
-  width: 100vw;
-  height: 100vh;
-}
-
 .container {
+  padding: 0 20px;
+
   @media (min-width: 64em) {
-    max-width: 64em;
     margin: 0 auto;
+    max-width: 64em;
+  }
+
+  @media (min-width: 65em) {
+    padding: 0;
   }
 }
 
 @import 'appbar';
+@import 'tabbar';
 @import 'todolist';

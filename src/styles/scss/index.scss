@@ -12,3 +12,12 @@
 @import 'views/index.scss';
 
 @import "uikit/src/scss/uikit-theme.scss";
+
+body {
+  padding: 84px 0;
+  box-sizing: border-box;
+
+  @media (min-width: 64em) {
+    margin: 0;
+  }
+}
