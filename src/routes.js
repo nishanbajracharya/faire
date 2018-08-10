@@ -12,6 +12,8 @@ const Routes = () => <Router>
   <div>
     <AppBar />
     <Route exact path={ROUTES.HOME} component={Home} />
+    <Route exact path={ROUTES.COMPLETED} component={Home} />
+    <Route exact path={ROUTES.REMAINING} component={Home} />
     <Route path={ROUTES.SHOWCASE} component={Showcase} />
     <TabBar />
   </div>

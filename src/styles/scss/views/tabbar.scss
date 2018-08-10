@@ -9,16 +9,24 @@
     flex: 1;
     height: 64px;
     display: flex;
+    font-size: 14px;
     color: $nav-link;
     background: $white;
     align-items: center;
+    padding-bottom: 4px;
     text-decoration: none;
+    flex-direction: column;
     box-sizing: border-box;
-    justify-content: center;
+    justify-content: flex-end;
     border-bottom: 2px solid transparent;
 
     &.active {
+      color: $blue;
       border-bottom: 2px solid $blue;
+
+      svg path {
+        fill: $blue;
+      }
     }
 
     &:hover {
