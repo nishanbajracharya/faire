@@ -75,8 +75,17 @@
 
 .icon-button {
   cursor: pointer;
+
   &.uk-button {
     padding: 0;
     background: none;
+  }
+
+  &:hover svg path {
+    fill: $icon-button-hover;
+  }
+
+  &:active svg path {
+    fill: lighten($icon-button-hover, 10%);
   }
 }

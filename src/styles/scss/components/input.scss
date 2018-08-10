@@ -1,13 +1,27 @@
 @mixin hook-form-single-line() {
-  border: none;
   height: 60px;
   font-size: 16px;
   line-height: 60px;
-  border-bottom: 1px solid $input-border-bottom;
+  border-radius: 3px;
+  border: 2px solid transparent;
+
+  &.input-box {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $input-border-bottom;
+  }
+
+  &.search-bar {
+    @include shadow();
+  }
 }
 
 @mixin hook-form-focus() {
   color: #49c;
-  border: none;
-  border-bottom: 1px solid $input-border-bottom-focus;
+  border: 2px solid $input-border-bottom-focus;
+
+  &.input-box {
+    border: none;
+    border-bottom: 1px solid $input-border-bottom-focus;
+  }
 }
