@@ -1,0 +1,32 @@
+.todolist {
+  padding: 0;
+  width: 100%;
+  list-style: none;
+}
+
+.todo-item {
+  height: 60px;
+  display: flex;
+  padding: 0 20px;
+  font-weight: 500;
+  background: $white;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border-bottom: 1px solid $todo-item-border;
+
+  .todo-checkbox path {
+    fill: $blue;
+  }
+
+  &.completed {
+    span {
+      color: $completed-todo;
+      text-decoration: line-through;
+    }
+
+    .todo-checkbox path {
+      fill: $completed-todo;
+    }
+  }
+}

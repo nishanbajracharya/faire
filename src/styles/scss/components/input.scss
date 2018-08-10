@@ -4,10 +4,12 @@
   line-height: 60px;
   background: $white;
   border-radius: 3px;
+  padding: 0 60px 0 20px;
   border: 2px solid transparent;
 
   &.input-box {
     border: none;
+    padding: 0 20px;
     border-radius: 0;
     border-bottom: 1px solid $input-border-bottom;
   }
@@ -39,7 +41,7 @@
 
   .search-icon {
     top: 17px;
-    right: 17px;
+    right: 20px;
     position: absolute;
 
     path {

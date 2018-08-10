@@ -1,10 +1,17 @@
 import React from 'react';
 
+import TodoList from './todoList';
 import Icon from '../components/icon';
 import Input from '../components/input';
 import Button from '../components/button';
 import Search from '../components/search';
 import IconButton from '../components/iconButton';
+
+const TODO = [
+  {name: 'Item 1', desc: 'Item1 description', isCompleted: false},
+  {name: 'Item 2', desc: 'Item2 description', isCompleted: true},
+  {name: 'Item 3', desc: 'Item3 description', isCompleted: false},
+]
 
 const Showcase = () =>
   <div className="container">
@@ -34,6 +41,9 @@ const Showcase = () =>
     </div>
     <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
       <Search placeholder="Input" />
+    </div>
+    <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
+      <TodoList list={TODO}/>
     </div>
   </div>
 
