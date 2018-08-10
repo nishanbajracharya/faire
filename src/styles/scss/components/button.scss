@@ -55,8 +55,8 @@
 @mixin hook-button-disabled() {
   cursor: not-allowed;
   &.uk-button-default {
+    background: #fff;
     color: fade-out(darken($button-default-background, 40%), 0.6);
-    background: darken($button-default-background, 5%);
     border: $button-border-width solid darken($button-default-background, 10%);
   }
 

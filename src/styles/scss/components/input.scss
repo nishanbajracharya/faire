@@ -2,6 +2,7 @@
   height: 60px;
   font-size: 16px;
   line-height: 60px;
+  background: $white;
   border-radius: 3px;
   border: 2px solid transparent;
 
@@ -18,10 +19,31 @@
 
 @mixin hook-form-focus() {
   color: #49c;
+  background: $white;
   border: 2px solid $input-border-bottom-focus;
 
   &.input-box {
     border: none;
+    background: $white;
     border-bottom: 1px solid $input-border-bottom-focus;
+  }
+
+  & + svg path {
+    fill: $input-border-bottom-focus;
+  }
+}
+
+.search-container {
+  width: 100%;
+  position: relative;
+
+  .search-icon {
+    top: 17px;
+    right: 17px;
+    position: absolute;
+
+    path {
+      fill: $input-border-bottom
+    }
   }
 }
