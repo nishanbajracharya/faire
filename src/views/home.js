@@ -1,11 +1,12 @@
 import React from 'react';
 
 import ROUTES from '../constants/routes';
+import Search from '../components/search';
+import { AddTodo } from './todoList';
 
-const Home = ({ ...props }) => <div className="container">
-  {
-    props.filter
-  }
+const Home = ({ filter = '' }) => <div className="container full-width main-content">
+  <Search />
+  <AddTodo />
 </div>;
 
 const withCompletedFilter = Component => props => {

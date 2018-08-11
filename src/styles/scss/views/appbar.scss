@@ -25,10 +25,11 @@
     display: inline-flex;
     box-sizing: border-box;
     justify-content: center;
-    border-top: 2px solid transparent;
+    border-top: 4px solid transparent;
 
     &.active {
-      border-top: 2px solid $global-primary-background;
+      color: $blue;
+      border-top: 4px solid $global-primary-background;
     }
 
     &:hover {
