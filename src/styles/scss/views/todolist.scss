@@ -22,6 +22,10 @@
 
   p {
     margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 40px);
   }
 
   &.completed {

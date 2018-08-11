@@ -14,10 +14,18 @@ class Home extends React.Component {
     super();
 
     this.state = {
+      query: '',
       list: ARRAY,
-      query: ''
+      newTodoName: ''
     }
   }
+
+  addTodo = () => this.state.newTodoName && this.setState({
+    newTodoName: '',
+    list: [{name: this.state.newTodoName, desc: '', isCompleted: false}, ...this.state.list]
+  })
+
+  setNewTodoName = newTodoName => this.setState({ newTodoName })
 
   toggleTodo = item => {
     const index = this.state.list.findIndex(listItem => listItem === item);
@@ -46,7 +54,7 @@ class Home extends React.Component {
     return <div className="container full-width main-content">
       <Search placeholder="Search for a task" onInput={this.setSearchQuery} />
       <div className="todo-container">
-        <AddTodo />
+        <AddTodo onInput={this.setNewTodoName} add={this.addTodo}/>
         <TodoList list={this.filterTodo(this.searchTodo(this.state.list, this.state.query), this.props.filter)} onClick={this.toggleTodo} />
       </div>
     </div>;
