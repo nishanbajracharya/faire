@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import TodoItem from './todoItem';
+import EmptyList from './emptyList';
 
 const TodoList = ({
   list = [],
   onClick = f => f
 }) => <ul className="todolist">
   {
-    list.map((item, key) => <TodoItem key={key} {...item} onClick={() => onClick(item)}/>)
+    list && list.length > 0 ? list.map((item, key) => <TodoItem key={key} {...item} onClick={() => onClick(item)}/>) : <EmptyList />
   }
 </ul>;
 

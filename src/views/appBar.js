@@ -11,7 +11,8 @@ const AppBar = () => <div className="appbar">
     <NavLink to="/" exact={true}><Icon name="logo" size={80} /></NavLink>
     <div className="nav-container">
       <NavLink className="link" to={ROUTES.HOME} exact={true}>Home</NavLink>
-      <NavLink className="link" to={ROUTES.SHOWCASE}>Showcase</NavLink>
+      <NavLink className="link" to={ROUTES.COMPLETED}>Completed</NavLink>
+      <NavLink className="link" to={ROUTES.REMAINING}>Remaining</NavLink>
     </div>
     <IconButton name="plus" color={COLORS.PRIMARY} />
   </div>

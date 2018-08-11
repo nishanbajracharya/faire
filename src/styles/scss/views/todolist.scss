@@ -20,8 +20,12 @@
     fill: $blue;
   }
 
+  p {
+    margin: 0;
+  }
+
   &.completed {
-    span {
+    p {
       color: $completed-todo;
       text-decoration: line-through;
     }
@@ -29,11 +33,19 @@
     .todo-checkbox path {
       fill: $completed-todo;
     }
+
+    .todo-desc {
+      color: $gray;
+    }
+  }
+
+  .todo-desc {
+    color: $gray;
+    padding-left: 10px;
   }
 }
 
 .add-todo-container {
-  margin: 32px 0;
   position: relative;
 }
 

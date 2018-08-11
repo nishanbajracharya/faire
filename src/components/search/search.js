@@ -15,6 +15,7 @@ class Search extends React.Component {
 
 Search.defaultProps = {
   className: '',
+  onInput: f => f,
   containerClassName: ''
 }
 
