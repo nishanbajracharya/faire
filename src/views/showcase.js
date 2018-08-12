@@ -3,6 +3,7 @@ import React from 'react';
 import TodoList from './todoList';
 import Icon from '../components/icon';
 import Input from '../components/input';
+import AddTodo from './todoList/addTodo';
 import Button from '../components/button';
 import Search from '../components/search';
 import IconButton from '../components/iconButton';
@@ -76,6 +77,8 @@ class Showcase extends React.Component {
       </div>
       <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
         <Input placeholder="Input" />
+      </div>
+      <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
         <IconButton name="plus" color="#49c" />
         <IconButton name="checked" color="#49c" />
         <IconButton name="unchecked" color="#49c" />
@@ -83,6 +86,9 @@ class Showcase extends React.Component {
       </div>
       <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
         <Search placeholder="Input" onInput={this.setSearchQuery}/>
+      </div>
+      <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
+        <AddTodo />
       </div>
       <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
         <TodoList list={this.filterTodo(this.state.list, this.state.query)} onClick={this.toggleTodo}/>
