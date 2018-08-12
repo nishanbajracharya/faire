@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 class Input extends React.Component {
   render() {
-    return <input {...this.props} className={`uk-input input-box ${this.props.className}`} ref={c => this.props.setRef(c)}/>;
+    const {setRef, ...props} = this.props;
+    return <input {...props} className={`uk-input input-box ${props.className}`} ref={c => setRef(c)}/>;
   }
 }
 
