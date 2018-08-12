@@ -36,8 +36,9 @@ const AppModal = ({
   contentLabel={contentLabel}
   style={getModalStyle(styles)}
   onRequestClose={onRequestClose}
+  bodyOpenClassName="ReactModal__Body--open"
 >
-  {children}
+    {children}
   </Modal>;
 
 export default AppModal;

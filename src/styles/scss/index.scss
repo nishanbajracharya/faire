@@ -20,4 +20,8 @@ body {
   @media (min-width: 64em) {
     margin: 0;
   }
+
+  &.ReactModal__Body--open {
+    overflow: hidden;
+  }
 }

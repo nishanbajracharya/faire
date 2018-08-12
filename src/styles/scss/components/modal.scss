@@ -24,12 +24,19 @@
 
 .ReactModal__Content {
   padding: 20px;
-  min-width: 20vw;
-  margin-top: 20%;
-  border-radius: 3px;
+  min-width: 100vw;
+  min-height: 100vh;
   background: $white;
   box-sizing: border-box;
   @include shadow-large();
-  transform: translateY(-50px);
+  transform: translateY(50px);
   transition: 250ms ease-in-out;
+
+  @media (min-width: 64em) {
+    margin-top: 20%;
+    min-width: 20vw;
+    min-height: unset;
+    border-radius: 3px;
+    transform: translateY(-50px);
+  }
 }
