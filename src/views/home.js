@@ -4,9 +4,7 @@ import ROUTES from '../constants/routes';
 import Search from '../components/search';
 import TodoList, { AddTodo } from './todoList';
 
-const ARRAY = Array.from(Array(20).keys()).map(i => (
-  { name: `Item ${i}`, desc: `Item ${i} description`, isCompleted: Math.random() > 0.5 }
-));
+import { getList } from './showcase';
 
 class Home extends React.Component {
 
@@ -15,14 +13,14 @@ class Home extends React.Component {
 
     this.state = {
       query: '',
-      list: ARRAY,
+      list: getList(),
       newTodoName: ''
     }
   }
 
   addTodo = () => this.state.newTodoName && this.setState({
     newTodoName: '',
-    list: [{name: this.state.newTodoName, desc: '', isCompleted: false}, ...this.state.list]
+    list: [{ name: this.state.newTodoName, desc: '', isCompleted: false }, ...this.state.list]
   })
 
   setNewTodoName = newTodoName => this.setState({ newTodoName })
@@ -31,30 +29,30 @@ class Home extends React.Component {
     const index = this.state.list.findIndex(listItem => listItem === item);
 
     this.setState({
-      list: this.state.list.map((item, id) => id === index ? {...item, isCompleted: !item.isCompleted}: item)
+      list: this.state.list.map((item, id) => id === index ? { ...item, isCompleted: !item.isCompleted } : item)
     })
   }
 
   searchTodo = (list, query) => list.filter(item => item.name.toLowerCase().includes(query.toLowerCase()))
 
   filterTodo = (list, filter) => {
-    switch(filter) {
+    switch (filter) {
       case 'COMPLETED':
         return list.filter(item => item.isCompleted);
       case 'REMAINING':
         return list.filter(item => !item.isCompleted);
       default:
-          return list;
+        return list;
     }
   }
 
-  setSearchQuery = query => this.setState({ query})
+  setSearchQuery = query => this.setState({ query })
 
   render() {
     return <div className="container full-width main-content">
       <Search placeholder="Search for a task" onInput={this.setSearchQuery} />
       <div className="todo-container">
-        <AddTodo onInput={this.setNewTodoName} add={this.addTodo}/>
+        <AddTodo onInput={this.setNewTodoName} add={this.addTodo} />
         <TodoList list={this.filterTodo(this.searchTodo(this.state.list, this.state.query), this.props.filter)} onClick={this.toggleTodo} />
       </div>
     </div>;
