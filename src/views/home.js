@@ -1,11 +1,12 @@
 import React from 'react';
 
+import { getList } from './showcase';
+import ICONS from '../constants/icons';
 import Modal from '../components/modal';
 import ROUTES from '../constants/routes';
 import Search from '../components/search';
 import TodoList, { AddTodo } from './todoList';
-
-import { getList } from './showcase';
+import IconButton from '../components/iconButton';
 
 class Home extends React.Component {
 
@@ -14,8 +15,9 @@ class Home extends React.Component {
 
     this.state = {
       query: '',
+      newTodoName: '',
       list: getList(),
-      newTodoName: ''
+      modalOpen: false,
     }
   }
 
@@ -49,11 +51,14 @@ class Home extends React.Component {
 
   setSearchQuery = query => this.setState({ query })
 
+  openModal = modalOpen => this.setState({ modalOpen })
+
   render() {
     return <div className="container full-width main-content">
+      <Modal isOpen={this.state.modalOpen} onRequestClose={() => this.openModal(false)}>Create Todo <IconButton name={ICONS.OPEN_IN_NEW} onClick={() => this.openModal(false)}/></Modal>
       <Search placeholder="Search for a task" onInput={this.setSearchQuery} />
       <div className="todo-container">
-        <AddTodo onInput={this.setNewTodoName} add={this.addTodo} />
+        <AddTodo onInput={this.setNewTodoName} add={this.addTodo} openDialog={() => this.openModal(true)}/>
         <TodoList list={this.filterTodo(this.searchTodo(this.state.list, this.state.query), this.props.filter)} onClick={this.toggleTodo} />
       </div>
     </div>;

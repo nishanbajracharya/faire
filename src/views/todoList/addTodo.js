@@ -20,7 +20,7 @@ class AddTodo extends React.Component {
         onKeyPress={e => e.key === 'Enter' && this.submitValue()}
         setRef={c => this.input = c}/>
       <IconButton name={ICONS.PLUS} buttonClassName="add-button" color={COLORS.PRIMARY} onClick={() => this.submitValue()} />
-      <IconButton name={ICONS.OPEN_IN_NEW} buttonClassName="open-button" color={COLORS.GRAY} size={24} />
+      <IconButton name={ICONS.OPEN_IN_NEW} buttonClassName="open-button" color={COLORS.GRAY} size={24} onClick={() => this.props.openDialog()}/>
     </div>;
   }
 }
@@ -28,6 +28,7 @@ class AddTodo extends React.Component {
 AddTodo.defaultProps = {
   add: f => f,
   onInput: f => f,
+  openDialog: f => f,
 }
 
 export default AddTodo;
