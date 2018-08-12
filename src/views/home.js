@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Modal from '../components/modal';
 import ROUTES from '../constants/routes';
 import Search from '../components/search';
 import TodoList, { AddTodo } from './todoList';
