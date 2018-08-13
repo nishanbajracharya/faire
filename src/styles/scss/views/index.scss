@@ -26,11 +26,21 @@
 }
 
 .todo-container {
-  margin: 32px 0 0;
   overflow: hidden;
   @include shadow();
   background: $white;
   border-radius: 3px;
+
+  @media (min-width: 30em){
+    margin: 32px 0 0;
+  }
+}
+
+.search-container {
+  display: none;
+  @media (min-width: 30em){
+    display: block;
+  }
 }
 
 @import 'appbar';

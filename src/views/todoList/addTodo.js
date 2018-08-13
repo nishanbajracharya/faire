@@ -13,7 +13,7 @@ class AddTodo extends React.Component {
   }
 
   render() {
-    return <div className="add-todo-container">
+    return <div className={`add-todo-container ${this.props.sticky ? 'sticky' : ''}`}>
       <Input
         placeholder="Add a task"
         onInput={e => this.props.onInput(e.target.value)}
