@@ -31,7 +31,7 @@ class Home extends React.Component {
   }
 
   handleScroll = () => {
-    if (window.scrollY > 120) {
+    if (window.scrollY > 124) {
       this.setState({ sticky: true });
     } else {
       this.setState({ sticky: false });
