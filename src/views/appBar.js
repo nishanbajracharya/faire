@@ -1,12 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import Icon from '../components/icon';
 import COLORS from '../constants/colors';
 import ROUTES from '../constants/routes';
+import * as modalActions from '../actions/modal';
 import IconButton from '../components/iconButton';
 
-const AppBar = () => <div className="appbar">
+const AppBar = ({
+  openModal = f => f,
+}) => <div className="appbar">
   <div className="container">
     <NavLink to="/" exact={true}><Icon name="logo" size={80} /></NavLink>
     <div className="nav-container">
@@ -14,8 +18,11 @@ const AppBar = () => <div className="appbar">
       <NavLink className="link" to={ROUTES.COMPLETED}>Completed</NavLink>
       <NavLink className="link" to={ROUTES.REMAINING}>Remaining</NavLink>
     </div>
-    <IconButton name="plus" color={COLORS.PRIMARY} />
+    <IconButton name="plus" color={COLORS.PRIMARY} onClick={() => openModal(true)}/>
   </div>
 </div>;
 
-export default AppBar;
+export default connect(null,
+dispatch => ({
+  openModal: open => dispatch(modalActions.openModal(open))
+}))(AppBar);

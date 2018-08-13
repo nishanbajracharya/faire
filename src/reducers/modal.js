@@ -10,7 +10,7 @@ const openModalReducer = (state = INITIAL_STATE, action) => {
       return { ...state, open: action.payload.open };
     default:
       return state;
-  };
+  }
 };
 
 export default openModalReducer;

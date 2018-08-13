@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { getList } from './showcase';
 import ICONS from '../constants/icons';
@@ -6,6 +7,7 @@ import Modal from '../components/modal';
 import ROUTES from '../constants/routes';
 import Search from '../components/search';
 import TodoList, { AddTodo } from './todoList';
+import * as modalActions from '../actions/modal';
 import IconButton from '../components/iconButton';
 
 class Home extends React.Component {
@@ -18,7 +20,6 @@ class Home extends React.Component {
       sticky: false,
       newTodoName: '',
       list: getList(),
-      modalOpen: false,
     }
   }
 
@@ -68,14 +69,12 @@ class Home extends React.Component {
 
   setSearchQuery = query => this.setState({ query })
 
-  openModal = modalOpen => this.setState({ modalOpen })
-
   render() {
     return <div className="container full-width main-content">
-      <Modal isOpen={this.state.modalOpen} onRequestClose={() => this.openModal(false)}>Create Todo <IconButton name={ICONS.OPEN_IN_NEW} onClick={() => this.openModal(false)}/></Modal>
+      <Modal isOpen={this.props.isOpen} onRequestClose={() => this.props.openModal(false)}>Create Todo <IconButton name={ICONS.OPEN_IN_NEW} onClick={() => this.props.openModal(false)}/></Modal>
       <Search placeholder="Search for a task" onInput={this.setSearchQuery} />
       <div className="todo-container">
-        <AddTodo onInput={this.setNewTodoName} add={this.addTodo} openDialog={() => this.openModal(true)} sticky={this.state.sticky}/>
+        <AddTodo onInput={this.setNewTodoName} add={this.addTodo} openDialog={() => this.props.openModal(true)} sticky={this.state.sticky}/>
         <TodoList list={this.filterTodo(this.searchTodo(this.state.list, this.state.query), this.props.filter)} onClick={this.toggleTodo} sticky={this.state.sticky} />
       </div>
     </div>;
@@ -97,4 +96,9 @@ const withCompletedFilter = Component => props => {
   return <Component {...props} filter={filter} />
 }
 
-export default withCompletedFilter(Home);
+export default connect(state => ({
+  isOpen: state.modal.open
+}),
+dispatch => ({
+  openModal: open => dispatch(modalActions.openModal(open))
+}))(withCompletedFilter(Home));
