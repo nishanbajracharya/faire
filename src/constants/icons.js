@@ -3,6 +3,7 @@ export default {
   LOGO: 'logo',
   PLUS: 'plus',
   TICKS: 'ticks',
+  CLOSE: 'close',
   SEARCH: 'search',
   CHECKED: 'checked',
   UNCHECKED: 'unchecked',

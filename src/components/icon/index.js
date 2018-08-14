@@ -7,6 +7,7 @@ import List from './list';
 import Logo from './logo';
 import Plus from './plus';
 import Ticks from './ticks';
+import Close from './close';
 import Search from './search';
 import Checked from './checked';
 import Unchecked from './unchecked';
@@ -23,6 +24,8 @@ const Icon = ({
       return <List size={25} {...props} />;
     case ICONS.PLUS:
       return <Plus size={25} {...props} />;
+    case ICONS.CLOSE:
+      return <Close size={25} {...props} />;
     case ICONS.SEARCH:
       return <Search size={25} {...props} />;
     case ICONS.TICKS:

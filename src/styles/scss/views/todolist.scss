@@ -96,3 +96,11 @@
     height: calc(100vh - 344px)
   }
 }
+
+.add-todo-expanded-modal {
+  min-width: 50vw;
+
+  .add-todo-container {
+    top: 32px;
+  }
+}

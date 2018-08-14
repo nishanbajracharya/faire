@@ -6,10 +6,10 @@ import ICONS from '../constants/icons';
 import Modal from '../components/modal';
 import ROUTES from '../constants/routes';
 import Search from '../components/search';
-import TodoList, { AddTodo } from './todoList';
 import * as modalActions from '../actions/modal';
 import IconButton from '../components/iconButton';
 import * as todoActions from '../actions/todolist';
+import TodoList, { AddTodo, AddTodoExpanded } from './todoList';
 
 class Home extends React.Component {
 
@@ -79,7 +79,7 @@ class Home extends React.Component {
 
   render() {
     return <div className="container full-width main-content">
-      <Modal isOpen={this.props.isOpen} onRequestClose={() => this.props.openModal(false)}>Create Todo <IconButton name={ICONS.OPEN_IN_NEW} onClick={() => this.props.openModal(false)} /></Modal>
+      <Modal isOpen={this.props.isOpen} onRequestClose={() => this.props.openModal(false)}><AddTodoExpanded onClose={() => this.props.openModal(false)}/></Modal>
       <Search placeholder="Search for a task" onInput={this.setSearchQuery} />
       <div className="todo-container">
         <AddTodo onInput={this.setNewTodoName} add={this.addTodo} openDialog={() => this.props.openModal(true)} sticky={this.state.sticky} />
