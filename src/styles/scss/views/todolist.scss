@@ -83,3 +83,16 @@
     right: 65px;
   }
 }
+
+.empty-list {
+  color: $gray;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 188px);
+
+  @media (min-width: 30em) {
+    height: calc(100vh - 344px)
+  }
+}

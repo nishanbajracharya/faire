@@ -3,6 +3,7 @@ import React from 'react';
 import ICONS from '../../constants/icons';
 import COLORS from '../../constants/colors';
 
+import List from './list';
 import Logo from './logo';
 import Plus from './plus';
 import Ticks from './ticks';
@@ -15,18 +16,20 @@ const Icon = ({
   name = '',
   ...props
 }) => {
-  switch(name) {
+  switch (name) {
     case ICONS.LOGO:
       return <Logo color={COLORS.PRIMARY} {...props} />;
-      case ICONS.PLUS:
+    case ICONS.LIST:
+      return <List size={25} {...props} />;
+    case ICONS.PLUS:
       return <Plus size={25} {...props} />;
     case ICONS.SEARCH:
       return <Search size={25} {...props} />;
-      case ICONS.TICKS:
+    case ICONS.TICKS:
       return <Ticks size={25} {...props} />;
-      case ICONS.CHECKED:
+    case ICONS.CHECKED:
       return <Checked size={25} {...props} />;
-      case ICONS.UNCHECKED:
+    case ICONS.UNCHECKED:
       return <Unchecked size={25} {...props} />;
     case ICONS.OPEN_IN_NEW:
       return <OpenInNew size={25} {...props} />;

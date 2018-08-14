@@ -1,4 +1,5 @@
 export default {
+  LIST: 'list',
   LOGO: 'logo',
   PLUS: 'plus',
   TICKS: 'ticks',
