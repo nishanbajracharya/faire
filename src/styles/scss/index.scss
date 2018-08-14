@@ -13,6 +13,13 @@
 
 @import "uikit/src/scss/uikit-theme.scss";
 
+html {
+  background: $white;
+  @media (min-width: 30em) {
+    background: #f5f5f5;
+  }
+}
+
 body {
   padding: 64px 0 64px;
   box-sizing: border-box;
