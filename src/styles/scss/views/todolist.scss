@@ -93,14 +93,18 @@
   height: calc(100vh - 188px);
 
   @media (min-width: 30em) {
-    height: calc(100vh - 344px)
+    height: calc(100vh - 344px);
   }
 }
 
 .add-todo-expanded-modal {
-  min-width: 50vw;
+  @media (min-width: 64em) {
+    min-width: 64em;
+  }
 
   .add-todo-container {
-    top: 32px;
+    @media (min-width: 30em) {
+      top: 0;
+    }
   }
 }

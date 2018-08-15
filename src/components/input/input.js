@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 class Input extends React.Component {
   render() {
-    const {setRef, ...props} = this.props;
-    return <input {...props} className={`uk-input input-box ${props.className}`} ref={c => setRef(c)}/>;
+    const {setRef, multiline, ...props} = this.props;
+    return multiline ? <textarea {...props} className={`uk-input input-box multiline ${props.className}`} ref={c => setRef(c)}/> : <input {...props} className={`uk-input input-box ${props.className}`} ref={c => setRef(c)}/>;
   }
 }
 

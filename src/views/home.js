@@ -2,12 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { getList } from './showcase';
-import ICONS from '../constants/icons';
 import Modal from '../components/modal';
 import ROUTES from '../constants/routes';
 import Search from '../components/search';
 import * as modalActions from '../actions/modal';
-import IconButton from '../components/iconButton';
 import * as todoActions from '../actions/todolist';
 import TodoList, { AddTodo, AddTodoExpanded } from './todoList';
 
@@ -19,7 +17,7 @@ class Home extends React.Component {
     this.state = {
       query: '',
       sticky: false,
-      newTodoName: '',
+      todoName: '',
       list: getList(),
     }
   }
@@ -42,17 +40,17 @@ class Home extends React.Component {
 
   addTodo = () => {
     this.setState({
-      newTodoName: ''
+      todoName: ''
     });
 
-    this.state.newTodoName && this.props.addTodo({
+    this.state.todoName && this.props.addTodo({
       desc: '',
       isCompleted: false,
-      name: this.state.newTodoName,
+      name: this.state.todoName,
     })
   }
 
-  setNewTodoName = newTodoName => this.setState({ newTodoName })
+  settodoName = todoName => this.setState({ todoName })
 
   toggleTodo = item => {
     const index = this.state.list.findIndex(listItem => listItem === item);
@@ -82,7 +80,7 @@ class Home extends React.Component {
       <Modal isOpen={this.props.isOpen} onRequestClose={() => this.props.openModal(false)}><AddTodoExpanded onClose={() => this.props.openModal(false)}/></Modal>
       <Search placeholder="Search for a task" onInput={this.setSearchQuery} />
       <div className="todo-container">
-        <AddTodo onInput={this.setNewTodoName} add={this.addTodo} openDialog={() => this.props.openModal(true)} sticky={this.state.sticky} />
+        <AddTodo onInput={this.settodoName} add={this.addTodo} openDialog={() => this.props.openModal(true)} sticky={this.state.sticky} />
         <TodoList list={this.filterTodo(this.searchTodo(this.props.list, this.state.query), this.props.filter)} onClick={this.props.toggleTodo} sticky={this.state.sticky} />
       </div>
     </div>;

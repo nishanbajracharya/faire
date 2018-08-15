@@ -1,6 +1,7 @@
 @mixin hook-form-single-line() {
-  height: 60px;
+  height: unset;
   font-size: 16px;
+  min-height: 60px;
   line-height: 60px;
   background: $white;
   border-radius: 3px;
@@ -16,6 +17,16 @@
 
   &.search-bar {
     @include shadow();
+  }
+
+  &.multiline {
+    resize: vertical;
+    line-height: 60px;
+    min-height: calc(100vh - 188px);
+
+    @media (min-width: 30em) {
+      min-height: 180px;
+    }
   }
 }
 
