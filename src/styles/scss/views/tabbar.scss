@@ -19,11 +19,11 @@
     flex-direction: column;
     box-sizing: border-box;
     justify-content: flex-end;
-    border-bottom: 2px solid transparent;
+    border-bottom: 4px solid transparent;
 
     &.active {
       color: $blue;
-      border-bottom: 2px solid $blue;
+      border-bottom: 4px solid $blue;
 
       svg path {
         fill: $blue;

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import ICONS from '../../constants/icons';
 import Input from '../../components/input';
+import COLORS from '../../constants/colors';
 import Button from '../../components/button';
 import IconButton from '../../components/iconButton';
 import * as todoActions from '../../actions/todolist';
@@ -42,7 +43,7 @@ class AddTodoExpanded extends React.Component {
     return <div className="add-todo-expanded-modal">
       <div className="modal-header">
         Create a new task
-        <IconButton name={ICONS.CLOSE} onClick={this.props.onClose} />
+        <IconButton name={ICONS.CLOSE} onClick={this.props.onClose} color={COLORS.GRAY}/>
       </div>
       <Input
         onInput={e => this.setName(e.target.value)}
