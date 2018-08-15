@@ -34,17 +34,24 @@ class AddTodoExpanded extends React.Component {
     this.props.onClose();
   }
 
+  componentDidMount() {
+    this.setName(this.props.defaultTodo);
+  }
+
   render() {
     return <div className="add-todo-expanded-modal">
       <div className="modal-header">
         Create a new task
         <IconButton name={ICONS.CLOSE} onClick={this.props.onClose} />
       </div>
-      <Input onInput={e => this.setName(e.target.value)} placeholder="Task name"/>
-      <Input onInput={e => this.setDesc(e.target.value)} placeholder="Task description" multiline/>
+      <Input
+        onInput={e => this.setName(e.target.value)}
+        placeholder="Task name" value={this.state.name}
+        onKeyPress={e => e.key === 'Enter' && this.addTodo()} />
+      <Input onInput={e => this.setDesc(e.target.value)} placeholder="Task description" multiline />
       <div className="modal-footer">
-        <Button label="Cancel" onClick={this.props.onClose}/>
-        <Button label="Add Task" primary onClick={() => this.addTodo()}/>
+        <Button label="Cancel" onClick={this.props.onClose} />
+        <Button label="Add Task" primary onClick={() => this.addTodo()} />
       </div>
     </div>;
   }

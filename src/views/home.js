@@ -77,7 +77,7 @@ class Home extends React.Component {
 
   render() {
     return <div className="container full-width main-content">
-      <Modal isOpen={this.props.isOpen} onRequestClose={() => this.props.openModal(false)}><AddTodoExpanded onClose={() => this.props.openModal(false)}/></Modal>
+      <Modal isOpen={this.props.isOpen} onRequestClose={() => this.props.openModal(false)}><AddTodoExpanded onClose={() => this.props.openModal(false)} defaultTodo={this.state.todoName}/></Modal>
       <Search placeholder="Search for a task" onInput={this.setSearchQuery} />
       <div className="todo-container">
         <AddTodo onInput={this.settodoName} add={this.addTodo} openDialog={() => this.props.openModal(true)} sticky={this.state.sticky} />
