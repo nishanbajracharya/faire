@@ -46,4 +46,17 @@
       margin-left: -55px;
     }
   }
+
+  .header-add {
+    display: none;
+    @media (min-width: 30em) {
+      display: block;
+    }
+  }
+
+  .header-search {
+    @media (min-width: 30em) {
+      display: none;
+    }
+  }
 }
