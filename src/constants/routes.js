@@ -3,5 +3,6 @@ export default {
   ALL: '/all',
   SHOWCASE: '/showcase',
   COMPLETED: '/completed',
-  REMAINING: '/remaining'
+  REMAINING: '/remaining',
+  BASE: process.env.PUBLIC_URL,
 }

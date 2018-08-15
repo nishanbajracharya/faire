@@ -8,7 +8,7 @@ import TabBar from './views/tabBar';
 import Showcase from './views/showcase';
 import ROUTES from './constants/routes';
 
-const Routes = () => <Router>
+const Routes = () => <Router basename={ROUTES.BASE}>
   <div>
     <AppBar />
     <Route exact path={ROUTES.HOME} component={Home} />
