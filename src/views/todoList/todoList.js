@@ -10,7 +10,7 @@ const TodoList = ({
   onClick = f => f
 }) => <ul className={`todolist ${sticky ? 'sticky' : ''}`}>
   {
-    list && list.length > 0 ? list.map((item, key) => <TodoItem key={key} {...item} onClick={() => onClick(key)}/>) : <EmptyList />
+    list && list.length > 0 ? list.map((item, key) => <TodoItem key={key} {...item} onClick={() => onClick(item.id)}/>) : <EmptyList />
   }
 </ul>;
 

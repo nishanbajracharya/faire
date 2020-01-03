@@ -1,3 +1,4 @@
+import uuid from 'uuid/v4';
 import * as todoActions from '../actions/todolist';
 
 const INITIAL_STATE = {
@@ -7,10 +8,10 @@ const INITIAL_STATE = {
 const todoReducer = (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case todoActions.ADD_TODO:
-      return {...state, list: [action.payload, ...state.list]};
+      return {...state, list: [{...action.payload, id: uuid()}, ...state.list ]};
     case todoActions.TOGGLE_TODO:
-      return {...state, list: state.list.map((item, index) => {
-        if (index === action.payload.id) {
+      return {...state, list: state.list.map(item => {
+        if (item.id === action.payload.id) {
           return {
             ...item,
             isCompleted: !item.isCompleted
