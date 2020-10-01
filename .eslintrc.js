@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es2015: true,
     node: true,
+    jest: true,
   },
   extends: [
     'eslint:recommended',
