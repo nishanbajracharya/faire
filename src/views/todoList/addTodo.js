@@ -6,22 +6,37 @@ import COLORS from '@/constants/colors';
 import IconButton from '@/components/iconButton';
 
 class AddTodo extends React.Component {
-
   submitValue = () => {
     this.props.add();
     this.input.value = '';
-  }
+  };
 
   render() {
-    return <div className={`add-todo-container ${this.props.sticky ? 'sticky' : ''}`}>
-      <Input
-        placeholder="Add a task"
-        onInput={e => this.props.onInput(e.target.value)}
-        onKeyPress={e => e.key === 'Enter' && this.submitValue()}
-        setRef={c => this.input = c}/>
-      <IconButton name={ICONS.PLUS} buttonClassName="add-button" color={COLORS.PRIMARY} onClick={() => this.submitValue()} />
-      <IconButton name={ICONS.OPEN_IN_NEW} buttonClassName="open-button" color={COLORS.GRAY} size={24} onClick={() => this.props.openDialog()}/>
-    </div>;
+    return (
+      <div
+        className={`add-todo-container ${this.props.sticky ? 'sticky' : ''}`}
+      >
+        <Input
+          placeholder="Add a task"
+          onInput={e => this.props.onInput(e.target.value)}
+          onKeyPress={e => e.key === 'Enter' && this.submitValue()}
+          setRef={c => (this.input = c)}
+        />
+        <IconButton
+          name={ICONS.PLUS}
+          buttonClassName="add-button"
+          color={COLORS.PRIMARY}
+          onClick={() => this.submitValue()}
+        />
+        <IconButton
+          name={ICONS.OPEN_IN_NEW}
+          buttonClassName="open-button"
+          color={COLORS.GRAY}
+          size={24}
+          onClick={() => this.props.openDialog()}
+        />
+      </div>
+    );
   }
 }
 
@@ -29,6 +44,6 @@ AddTodo.defaultProps = {
   add: f => f,
   onInput: f => f,
   openDialog: f => f,
-}
+};
 
 export default AddTodo;

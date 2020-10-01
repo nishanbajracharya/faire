@@ -6,7 +6,7 @@ Modal.setAppElement('#root');
 const getModalStyle = style => ({
   overlay: {
     backgroundColor: null,
-    ...style.overlay
+    ...style.overlay,
   },
   content: {
     top: null,
@@ -18,8 +18,8 @@ const getModalStyle = style => ({
     position: null,
     background: null,
     borderRadius: null,
-    ...style.content
-  }
+    ...style.content,
+  },
 });
 
 const AppModal = ({
@@ -29,16 +29,18 @@ const AppModal = ({
   onAfterOpen = f => f,
   onRequestClose = f => f,
   styles = { overlay: {}, content: {} },
-}) => <Modal
-  isOpen={isOpen}
-  closeTimeoutMS={250}
-  onAfterOpen={onAfterOpen}
-  contentLabel={contentLabel}
-  style={getModalStyle(styles)}
-  onRequestClose={onRequestClose}
-  bodyOpenClassName="ReactModal__Body--open"
->
+}) => (
+  <Modal
+    isOpen={isOpen}
+    closeTimeoutMS={250}
+    onAfterOpen={onAfterOpen}
+    contentLabel={contentLabel}
+    style={getModalStyle(styles)}
+    onRequestClose={onRequestClose}
+    bodyOpenClassName="ReactModal__Body--open"
+  >
     {children}
-  </Modal>;
+  </Modal>
+);
 
 export default AppModal;

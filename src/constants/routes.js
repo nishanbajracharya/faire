@@ -5,4 +5,4 @@ export default {
   COMPLETED: '/completed',
   REMAINING: '/remaining',
   BASE: process.env.PUBLIC_URL,
-}
+};

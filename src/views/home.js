@@ -10,7 +10,6 @@ import * as todoActions from '@/actions/todolist';
 import TodoList, { AddTodo, AddTodoExpanded } from './todoList';
 
 class Home extends React.Component {
-
   constructor() {
     super();
 
@@ -19,7 +18,7 @@ class Home extends React.Component {
       sticky: false,
       todoName: '',
       list: getList(),
-    }
+    };
   }
 
   componentDidMount() {
@@ -36,31 +35,35 @@ class Home extends React.Component {
     } else {
       this.setState({ sticky: false });
     }
-  }
+  };
 
   addTodo = () => {
     this.setState({
-      todoName: ''
+      todoName: '',
     });
 
-    this.state.todoName && this.props.addTodo({
-      desc: '',
-      isCompleted: false,
-      name: this.state.todoName,
-    })
-  }
+    this.state.todoName &&
+      this.props.addTodo({
+        desc: '',
+        isCompleted: false,
+        name: this.state.todoName,
+      });
+  };
 
-  settodoName = todoName => this.setState({ todoName })
+  settodoName = todoName => this.setState({ todoName });
 
   toggleTodo = item => {
     const index = this.state.list.findIndex(listItem => listItem === item);
 
     this.setState({
-      list: this.state.list.map((item, id) => id === index ? { ...item, isCompleted: !item.isCompleted } : item)
-    })
-  }
+      list: this.state.list.map((item, id) =>
+        id === index ? { ...item, isCompleted: !item.isCompleted } : item
+      ),
+    });
+  };
 
-  searchTodo = (list, query) => list.filter(item => item.name.toLowerCase().includes(query.toLowerCase()))
+  searchTodo = (list, query) =>
+    list.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
 
   filterTodo = (list, filter) => {
     switch (filter) {
@@ -71,19 +74,41 @@ class Home extends React.Component {
       default:
         return list;
     }
-  }
+  };
 
-  setSearchQuery = query => this.setState({ query })
+  setSearchQuery = query => this.setState({ query });
 
   render() {
-    return <div className="container full-width main-content">
-      <Modal isOpen={this.props.isOpen} onRequestClose={() => this.props.openModal(false)}><AddTodoExpanded onClose={() => this.props.openModal(false)} defaultTodo={this.state.todoName}/></Modal>
-      <Search placeholder="Search for a task" onInput={this.setSearchQuery} />
-      <div className="todo-container">
-        <AddTodo onInput={this.settodoName} add={this.addTodo} openDialog={() => this.props.openModal(true)} sticky={this.state.sticky} />
-        <TodoList list={this.filterTodo(this.searchTodo(this.props.list, this.state.query), this.props.filter)} onClick={this.props.toggleTodo} sticky={this.state.sticky} />
+    return (
+      <div className="container full-width main-content">
+        <Modal
+          isOpen={this.props.isOpen}
+          onRequestClose={() => this.props.openModal(false)}
+        >
+          <AddTodoExpanded
+            onClose={() => this.props.openModal(false)}
+            defaultTodo={this.state.todoName}
+          />
+        </Modal>
+        <Search placeholder="Search for a task" onInput={this.setSearchQuery} />
+        <div className="todo-container">
+          <AddTodo
+            onInput={this.settodoName}
+            add={this.addTodo}
+            openDialog={() => this.props.openModal(true)}
+            sticky={this.state.sticky}
+          />
+          <TodoList
+            list={this.filterTodo(
+              this.searchTodo(this.props.list, this.state.query),
+              this.props.filter
+            )}
+            onClick={this.props.toggleTodo}
+            sticky={this.state.sticky}
+          />
+        </div>
       </div>
-    </div>;
+    );
   }
 }
 
@@ -99,15 +124,17 @@ const withCompletedFilter = Component => props => {
     }
   })();
 
-  return <Component {...props} filter={filter} />
-}
+  return <Component {...props} filter={filter} />;
+};
 
-export default connect(state => ({
-  list: state.todo.list,
-  isOpen: state.modal.open
-}),
+export default connect(
+  state => ({
+    list: state.todo.list,
+    isOpen: state.modal.open,
+  }),
   dispatch => ({
     addTodo: todo => dispatch(todoActions.addTodo(todo)),
     toggleTodo: id => dispatch(todoActions.toggleTodo(id)),
-    openModal: open => dispatch(modalActions.openModal(open))
-  }))(withCompletedFilter(Home));
+    openModal: open => dispatch(modalActions.openModal(open)),
+  })
+)(withCompletedFilter(Home));

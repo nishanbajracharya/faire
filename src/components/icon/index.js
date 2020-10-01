@@ -13,10 +13,7 @@ import Checked from './checked';
 import Unchecked from './unchecked';
 import OpenInNew from './openInNew';
 
-const Icon = ({
-  name = '',
-  ...props
-}) => {
+const Icon = ({ name = '', ...props }) => {
   switch (name) {
     case ICONS.LOGO:
       return <Logo color={COLORS.PRIMARY} {...props} />;
@@ -39,6 +36,6 @@ const Icon = ({
     default:
       return <div />;
   }
-}
+};
 
 export default Icon;
