@@ -3,12 +3,12 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { NavLink, withRouter } from 'react-router-dom';
 
-import Icon from '../components/icon';
-import ICONS from '../constants/icons';
-import COLORS from '../constants/colors';
-import ROUTES from '../constants/routes';
-import * as modalActions from '../actions/modal';
-import IconButton from '../components/iconButton';
+import Icon from '@/components/icon';
+import ICONS from '@/constants/icons';
+import COLORS from '@/constants/colors';
+import ROUTES from '@/constants/routes';
+import * as modalActions from '@/actions/modal';
+import IconButton from '@/components/iconButton';
 
 const AppBar = ({
   openModal = f => f

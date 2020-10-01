@@ -1,4 +1,4 @@
-import * as modalActions from '../actions/modal';
+import * as modalActions from '@/actions/modal';
 
 const INITIAL_STATE = {
   open: false
