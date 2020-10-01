@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Icon from '../components/icon';
-import COLORS from '../constants/colors';
-import ROUTES from '../constants/routes';
+import Icon from '@/components/icon';
+import COLORS from '@/constants/colors';
+import ROUTES from '@/constants/routes';
 
 const TabBar = () =>
   <div className="tab-bar nav-container">

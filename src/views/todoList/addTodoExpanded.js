@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import ICONS from '../../constants/icons';
-import Input from '../../components/input';
-import COLORS from '../../constants/colors';
-import Button from '../../components/button';
-import IconButton from '../../components/iconButton';
-import * as todoActions from '../../actions/todolist';
+import ICONS from '@/constants/icons';
+import Input from '@/components/input';
+import COLORS from '@/constants/colors';
+import Button from '@/components/button';
+import IconButton from '@/components/iconButton';
+import * as todoActions from '@/actions/todolist';
 
 class AddTodoExpanded extends React.Component {
   constructor() {

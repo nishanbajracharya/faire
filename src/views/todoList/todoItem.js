@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ICONS from '../../constants/icons';
-import IconButton from '../../components/iconButton';
+import ICONS from '@/constants/icons';
+import IconButton from '@/components/iconButton';
 
 const TodoItem = ({
   name = '',
