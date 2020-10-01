@@ -6,7 +6,7 @@ import IconButton from '@/components/iconButton';
 const TodoItem = ({
   name = '',
   desc = '',
-  onClick = (f) => f,
+  onClick = f => f,
   isCompleted = false,
 }) => (
   <li className={`todo-item ${isCompleted ? 'completed' : ''}`}>

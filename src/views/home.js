@@ -50,10 +50,10 @@ class Home extends React.Component {
       });
   };
 
-  settodoName = (todoName) => this.setState({ todoName });
+  settodoName = todoName => this.setState({ todoName });
 
-  toggleTodo = (item) => {
-    const index = this.state.list.findIndex((listItem) => listItem === item);
+  toggleTodo = item => {
+    const index = this.state.list.findIndex(listItem => listItem === item);
 
     this.setState({
       list: this.state.list.map((item, id) =>
@@ -63,22 +63,20 @@ class Home extends React.Component {
   };
 
   searchTodo = (list, query) =>
-    list.filter((item) =>
-      item.name.toLowerCase().includes(query.toLowerCase())
-    );
+    list.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
 
   filterTodo = (list, filter) => {
     switch (filter) {
       case 'COMPLETED':
-        return list.filter((item) => item.isCompleted);
+        return list.filter(item => item.isCompleted);
       case 'REMAINING':
-        return list.filter((item) => !item.isCompleted);
+        return list.filter(item => !item.isCompleted);
       default:
         return list;
     }
   };
 
-  setSearchQuery = (query) => this.setState({ query });
+  setSearchQuery = query => this.setState({ query });
 
   render() {
     return (
@@ -114,7 +112,7 @@ class Home extends React.Component {
   }
 }
 
-const withCompletedFilter = (Component) => (props) => {
+const withCompletedFilter = Component => props => {
   const filter = (() => {
     switch (props.match.path) {
       case ROUTES.COMPLETED:
@@ -130,13 +128,13 @@ const withCompletedFilter = (Component) => (props) => {
 };
 
 export default connect(
-  (state) => ({
+  state => ({
     list: state.todo.list,
     isOpen: state.modal.open,
   }),
-  (dispatch) => ({
-    addTodo: (todo) => dispatch(todoActions.addTodo(todo)),
-    toggleTodo: (id) => dispatch(todoActions.toggleTodo(id)),
-    openModal: (open) => dispatch(modalActions.openModal(open)),
+  dispatch => ({
+    addTodo: todo => dispatch(todoActions.addTodo(todo)),
+    toggleTodo: id => dispatch(todoActions.toggleTodo(id)),
+    openModal: open => dispatch(modalActions.openModal(open)),
   })
 )(withCompletedFilter(Home));

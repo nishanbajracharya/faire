@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
-const getModalStyle = (style) => ({
+const getModalStyle = style => ({
   overlay: {
     backgroundColor: null,
     ...style.overlay,
@@ -26,8 +26,8 @@ const AppModal = ({
   children,
   isOpen = false,
   contentLabel = '',
-  onAfterOpen = (f) => f,
-  onRequestClose = (f) => f,
+  onAfterOpen = f => f,
+  onRequestClose = f => f,
   styles = { overlay: {}, content: {} },
 }) => (
   <Modal

@@ -10,7 +10,7 @@ import IconButton from '../components/iconButton';
 
 const randomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
-const loremString = (max) => {
+const loremString = max => {
   let words = [
     'ad',
     'adipisicing',
@@ -91,7 +91,7 @@ const loremString = (max) => {
 };
 
 export const getList = (count = 20) =>
-  Array.from(Array(count).keys()).map((i) => ({
+  Array.from(Array(count).keys()).map(i => ({
     name: loremString(Math.random() * 2 + 1),
     desc: loremString(Math.random() * 18 + 2),
     isCompleted: Math.random() > 0.5,
@@ -107,8 +107,8 @@ class Showcase extends React.Component {
     };
   }
 
-  toggleTodo = (item) => {
-    const index = this.state.list.findIndex((listItem) => listItem === item);
+  toggleTodo = item => {
+    const index = this.state.list.findIndex(listItem => listItem === item);
 
     this.setState({
       list: this.state.list.map((item, id) =>
@@ -118,11 +118,9 @@ class Showcase extends React.Component {
   };
 
   filterTodo = (list, query) =>
-    list.filter((item) =>
-      item.name.toLowerCase().includes(query.toLowerCase())
-    );
+    list.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
 
-  setSearchQuery = (query) => {
+  setSearchQuery = query => {
     this.setState({
       query,
     });

@@ -10,7 +10,7 @@ import ROUTES from '@/constants/routes';
 import * as modalActions from '@/actions/modal';
 import IconButton from '@/components/iconButton';
 
-const AppBar = ({ openModal = (f) => f }) => (
+const AppBar = ({ openModal = f => f }) => (
   <div className="appbar">
     <div className="container">
       <NavLink to="/" exact={true}>
@@ -44,7 +44,7 @@ const AppBar = ({ openModal = (f) => f }) => (
 
 export default compose(
   withRouter,
-  connect(null, (dispatch) => ({
-    openModal: (open) => dispatch(modalActions.openModal(open)),
+  connect(null, dispatch => ({
+    openModal: open => dispatch(modalActions.openModal(open)),
   }))
 )(AppBar);

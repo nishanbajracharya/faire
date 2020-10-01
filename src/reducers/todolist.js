@@ -15,7 +15,7 @@ const todoReducer = (state = INITIAL_STATE, action) => {
     case todoActions.TOGGLE_TODO:
       return {
         ...state,
-        list: state.list.map((item) => {
+        list: state.list.map(item => {
           if (item.id === action.payload.id) {
             return {
               ...item,

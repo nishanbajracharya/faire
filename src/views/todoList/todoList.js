@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import TodoItem from './todoItem';
 import EmptyList from './emptyList';
 
-const TodoList = ({ list = [], sticky = false, onClick = (f) => f }) => (
+const TodoList = ({ list = [], sticky = false, onClick = f => f }) => (
   <ul className={`todolist ${sticky ? 'sticky' : ''}`}>
     {list && list.length > 0 ? (
       list.map((item, key) => (

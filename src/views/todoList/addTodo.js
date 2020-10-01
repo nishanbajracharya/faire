@@ -18,9 +18,9 @@ class AddTodo extends React.Component {
       >
         <Input
           placeholder="Add a task"
-          onInput={(e) => this.props.onInput(e.target.value)}
-          onKeyPress={(e) => e.key === 'Enter' && this.submitValue()}
-          setRef={(c) => (this.input = c)}
+          onInput={e => this.props.onInput(e.target.value)}
+          onKeyPress={e => e.key === 'Enter' && this.submitValue()}
+          setRef={c => (this.input = c)}
         />
         <IconButton
           name={ICONS.PLUS}
@@ -41,9 +41,9 @@ class AddTodo extends React.Component {
 }
 
 AddTodo.defaultProps = {
-  add: (f) => f,
-  onInput: (f) => f,
-  openDialog: (f) => f,
+  add: f => f,
+  onInput: f => f,
+  openDialog: f => f,
 };
 
 export default AddTodo;

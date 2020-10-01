@@ -8,13 +8,13 @@ class Input extends React.Component {
       <textarea
         {...props}
         className={`uk-input input-box multiline ${props.className}`}
-        ref={(c) => setRef(c)}
+        ref={c => setRef(c)}
       />
     ) : (
       <input
         {...props}
         className={`uk-input input-box ${props.className}`}
-        ref={(c) => setRef(c)}
+        ref={c => setRef(c)}
       />
     );
   }
@@ -26,7 +26,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   className: '',
-  setRef: (f) => f,
+  setRef: f => f,
 };
 
 export default Input;

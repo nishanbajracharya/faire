@@ -6,7 +6,7 @@ const Button = ({
   children,
   className = '',
   primary = false,
-  onClick = (f) => f,
+  onClick = f => f,
   disabled = false,
   secondary = false,
 }) => (

@@ -11,7 +11,7 @@ class Search extends React.Component {
         <input
           className={`uk-input search-bar ${this.props.className}`}
           placeholder="Search"
-          onInput={(e) => this.props.onInput(e.target.value)}
+          onInput={e => this.props.onInput(e.target.value)}
         />
         <Icon name={ICONS.SEARCH} size={24} className="search-icon" />
       </div>
@@ -21,7 +21,7 @@ class Search extends React.Component {
 
 Search.defaultProps = {
   className: '',
-  onInput: (f) => f,
+  onInput: f => f,
   containerClassName: '',
 };
 

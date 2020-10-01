@@ -18,12 +18,12 @@ class AddTodoExpanded extends React.Component {
     };
   }
 
-  setName = (value) =>
+  setName = value =>
     this.setState({
       name: value,
     });
 
-  setDesc = (value) =>
+  setDesc = value =>
     this.setState({
       desc: value,
     });
@@ -53,13 +53,13 @@ class AddTodoExpanded extends React.Component {
           />
         </div>
         <Input
-          onInput={(e) => this.setName(e.target.value)}
+          onInput={e => this.setName(e.target.value)}
           placeholder="Task name"
           value={this.state.name}
-          onKeyPress={(e) => e.key === 'Enter' && this.addTodo()}
+          onKeyPress={e => e.key === 'Enter' && this.addTodo()}
         />
         <Input
-          onInput={(e) => this.setDesc(e.target.value)}
+          onInput={e => this.setDesc(e.target.value)}
           placeholder="Task description"
           multiline
         />
@@ -73,9 +73,9 @@ class AddTodoExpanded extends React.Component {
 }
 
 AddTodoExpanded.defaultProps = {
-  onClose: (f) => f,
+  onClose: f => f,
 };
 
-export default connect(null, (dispatch) => ({
-  createTodo: (todo) => dispatch(todoActions.addTodo(todo)),
+export default connect(null, dispatch => ({
+  createTodo: todo => dispatch(todoActions.addTodo(todo)),
 }))(AddTodoExpanded);
