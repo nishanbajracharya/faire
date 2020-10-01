@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { getList } from './showcase';
-import Modal from '../components/modal';
-import ROUTES from '../constants/routes';
-import Search from '../components/search';
-import * as modalActions from '../actions/modal';
-import * as todoActions from '../actions/todolist';
+import Modal from '@/components/modal';
+import ROUTES from '@/constants/routes';
+import Search from '@/components/search';
+import * as modalActions from '@/actions/modal';
+import * as todoActions from '@/actions/todolist';
 import TodoList, { AddTodo, AddTodoExpanded } from './todoList';
 
 class Home extends React.Component {

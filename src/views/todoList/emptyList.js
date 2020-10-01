@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Icon from '../../components/icon';
-import ICONS from '../../constants/icons';
-import COLORS from '../../constants/colors';
+import Icon from '@/components/icon';
+import ICONS from '@/constants/icons';
+import COLORS from '@/constants/colors';
 
 const EmptyList = () => (
   <div className="empty-list">

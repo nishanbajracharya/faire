@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ICONS from '../../constants/icons';
-import Input from '../../components/input';
-import COLORS from '../../constants/colors';
-import IconButton from '../../components/iconButton';
+import ICONS from '@/constants/icons';
+import Input from '@/components/input';
+import COLORS from '@/constants/colors';
+import IconButton from '@/components/iconButton';
 
 class AddTodo extends React.Component {
   submitValue = () => {

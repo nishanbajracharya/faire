@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ICONS from '../../constants/icons';
-import COLORS from '../../constants/colors';
+import ICONS from '@/constants/icons';
+import COLORS from '@/constants/colors';
 
 import List from './list';
 import Logo from './logo';
