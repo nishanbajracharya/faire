@@ -39,6 +39,6 @@ const Icon = ({
     default:
       return <div />;
   }
-}
+};
 
 export default Icon;

@@ -15,6 +15,6 @@ const Button = ({
   disabled={disabled}
   className={`uk-button uk-button-default ${primary ? 'uk-button-primary' : ''} ${secondary ? 'uk-button-secondary' : ''} ${className}`}
 >{label || children}
-  </button>;
+</button>;
 
 export default Button;

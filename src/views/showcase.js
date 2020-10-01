@@ -10,21 +10,21 @@ import IconButton from '../components/iconButton';
 
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 const loremString = max => {
-  let words = ['ad', 'adipisicing', 'aliqua', 'aliquip', 'amet', 'anim', 'aute', 'cillum', 'commodo', 'consectetur', 'consequat', 'culpa', 'cupidatat', 'deserunt', 'do', 'dolor', 'dolore', 'duis', 'ea', 'eiusmod', 'elit', 'enim', 'esse', 'est', 'et', 'eu', 'ex', 'excepteur', 'exercitation', 'fugiat', 'id', 'in', 'incididunt', 'ipsum', 'irure', 'labore', 'laboris', 'laborum', 'Lorem', 'magna', 'minim', 'mollit', 'nisi', 'non', 'nostrud', 'nulla', 'occaecat', 'officia', 'pariatur', 'proident', 'qui', 'quis', 'reprehenderit', 'sint', 'sit', 'sunt', 'tempor', 'ullamco', 'ut', 'velit', 'veniam', 'voluptate']
-  var sentence = ''
-  var count = max
+  let words = ['ad', 'adipisicing', 'aliqua', 'aliquip', 'amet', 'anim', 'aute', 'cillum', 'commodo', 'consectetur', 'consequat', 'culpa', 'cupidatat', 'deserunt', 'do', 'dolor', 'dolore', 'duis', 'ea', 'eiusmod', 'elit', 'enim', 'esse', 'est', 'et', 'eu', 'ex', 'excepteur', 'exercitation', 'fugiat', 'id', 'in', 'incididunt', 'ipsum', 'irure', 'labore', 'laboris', 'laborum', 'Lorem', 'magna', 'minim', 'mollit', 'nisi', 'non', 'nostrud', 'nulla', 'occaecat', 'officia', 'pariatur', 'proident', 'qui', 'quis', 'reprehenderit', 'sint', 'sit', 'sunt', 'tempor', 'ullamco', 'ut', 'velit', 'veniam', 'voluptate'];
+  var sentence = '';
+  var count = max;
   while (count > 0) {
-    let i = randomInt(0, words.length)
-    let word = words[i]
-    sentence = count === max ? word : sentence + ' ' + word
-    count = count - 1
+    let i = randomInt(0, words.length);
+    let word = words[i];
+    sentence = count === max ? word : sentence + ' ' + word;
+    count = count - 1;
   }
   if (sentence.length) {
     sentence = sentence.slice(1);
     sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1);
   }
   return sentence;
-}
+};
 
 export const getList = (count = 20) => Array.from(Array(count).keys()).map(i => (
   { name: loremString(Math.random() * 2 + 1), desc: loremString(Math.random() * 18 + 2), isCompleted: Math.random() > 0.5 }
@@ -37,7 +37,7 @@ class Showcase extends React.Component {
     this.state = {
       query: '',
       list: getList(8)
-    }
+    };
   }
 
   toggleTodo = item => {
@@ -45,7 +45,7 @@ class Showcase extends React.Component {
 
     this.setState({
       list: this.state.list.map((item, id) => id === index ? {...item, isCompleted: !item.isCompleted}: item)
-    })
+    });
   }
 
   filterTodo = (list, query) => list.filter(item => item.name.toLowerCase().includes(query.toLowerCase()))
@@ -53,7 +53,7 @@ class Showcase extends React.Component {
   setSearchQuery = query => {
     this.setState({
       query
-    })
+    });
   }
 
   render() {
@@ -93,7 +93,7 @@ class Showcase extends React.Component {
       <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
         <TodoList list={this.filterTodo(this.state.list, this.state.query)} onClick={this.toggleTodo}/>
       </div>
-    </div>
+    </div>;
   }
 }
 

@@ -29,6 +29,6 @@ AddTodo.defaultProps = {
   add: f => f,
   onInput: f => f,
   openDialog: f => f,
-}
+};
 
 export default AddTodo;

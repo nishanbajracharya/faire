@@ -19,7 +19,7 @@ class Home extends React.Component {
       sticky: false,
       todoName: '',
       list: getList(),
-    }
+    };
   }
 
   componentDidMount() {
@@ -47,7 +47,7 @@ class Home extends React.Component {
       desc: '',
       isCompleted: false,
       name: this.state.todoName,
-    })
+    });
   }
 
   settodoName = todoName => this.setState({ todoName })
@@ -57,7 +57,7 @@ class Home extends React.Component {
 
     this.setState({
       list: this.state.list.map((item, id) => id === index ? { ...item, isCompleted: !item.isCompleted } : item)
-    })
+    });
   }
 
   searchTodo = (list, query) => list.filter(item => item.name.toLowerCase().includes(query.toLowerCase()))
@@ -99,15 +99,15 @@ const withCompletedFilter = Component => props => {
     }
   })();
 
-  return <Component {...props} filter={filter} />
-}
+  return <Component {...props} filter={filter} />;
+};
 
 export default connect(state => ({
   list: state.todo.list,
   isOpen: state.modal.open
 }),
-  dispatch => ({
-    addTodo: todo => dispatch(todoActions.addTodo(todo)),
-    toggleTodo: id => dispatch(todoActions.toggleTodo(id)),
-    openModal: open => dispatch(modalActions.openModal(open))
-  }))(withCompletedFilter(Home));
+dispatch => ({
+  addTodo: todo => dispatch(todoActions.addTodo(todo)),
+  toggleTodo: id => dispatch(todoActions.toggleTodo(id)),
+  openModal: open => dispatch(modalActions.openModal(open))
+}))(withCompletedFilter(Home));

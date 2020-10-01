@@ -16,6 +16,6 @@ const TabBar = () =>
     <NavLink className="link" to={ROUTES.REMAINING}>
       <Icon name="unchecked" color={COLORS.GRAY}/>Remaining
     </NavLink>
-  </div>
+  </div>;
 
 export default TabBar;

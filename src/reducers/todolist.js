@@ -18,10 +18,10 @@ const todoReducer = (state = INITIAL_STATE, action) => {
           };
         }
         return item;
-      })}
+      })};
     default:
       return state;
   }
-}
+};
 
 export default todoReducer;

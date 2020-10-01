@@ -60,7 +60,7 @@ class AddTodoExpanded extends React.Component {
 
 AddTodoExpanded.defaultProps = {
   onClose: f => f
-}
+};
 
 export default connect(null, dispatch => ({
   createTodo: todo => dispatch(todoActions.addTodo(todo))

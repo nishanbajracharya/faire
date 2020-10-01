@@ -16,6 +16,6 @@ const TodoList = ({
 
 TodoList.propTypes = {
   list: PropTypes.array
-}
+};
 
 export default TodoList;

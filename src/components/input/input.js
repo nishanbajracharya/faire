@@ -10,11 +10,11 @@ class Input extends React.Component {
 
 Input.propTypes = {
   className: PropTypes.string
-}
+};
 
 Input.defaultProps = {
   className: '',
   setRef: f => f,
-}
+};
 
 export default Input;

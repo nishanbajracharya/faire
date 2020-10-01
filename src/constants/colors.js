@@ -3,4 +3,4 @@ export default {
   SECONDARY: '#42B98E',
   WHITE: '#ffffff',
   GRAY: '#929292'
-}
+};

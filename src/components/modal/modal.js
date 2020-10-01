@@ -38,7 +38,7 @@ const AppModal = ({
   onRequestClose={onRequestClose}
   bodyOpenClassName="ReactModal__Body--open"
 >
-    {children}
-  </Modal>;
+  {children}
+</Modal>;
 
 export default AppModal;
