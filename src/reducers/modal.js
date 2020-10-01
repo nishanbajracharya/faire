@@ -1,7 +1,7 @@
 import * as modalActions from '../actions/modal';
 
 const INITIAL_STATE = {
-  open: false
+  open: false,
 };
 
 const openModalReducer = (state = INITIAL_STATE, action) => {
